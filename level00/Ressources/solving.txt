@@ -1,0 +1,3 @@
+First step => find / -user flag00 2>/dev/null
+Second step => we have the file john we use in dcode
+Three step => I ts code cesar who give us nottoohardhere

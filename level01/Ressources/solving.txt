@@ -1,0 +1,4 @@
+First step => cat /etc/passwd
+Second step => there are 42hDRfypTqqnw password for flag01
+Three step => we put flag01:42hDRfypTqqnw in flag.txt and use the command john flag.txt 
+Four step => we have the password "abcdefg"

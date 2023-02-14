@@ -1,0 +1,5 @@
+We see in the file getflag using strings getflag all the flag before ft_des 
+So we just take the last one and input to ft_des
+7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
+Su flag14: 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
+And we have this message: Congratulation. Type getflag to get the key and send it to me the owner of this livecd :)

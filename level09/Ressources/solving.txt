@@ -1,0 +1,18 @@
+I see that ./level09 « file » do a output like
+For each characters for the name of file do{
+puts(Caracter + i position);
+}
+So what I did is a script taking the hex of the content of token (hexdump) change the hex at the good position: like 3466 6d6b => 6634 6b6d
+And do this code:
+hex_str = "66 34 6b 6d 6d 36 70 7c 3d 82 7f 70 82 6e 83 82 44 42 83 44 75 7b 7f 8c 89"
+numbers_list = [int(num, 16) for num in hex_str.split()]
+print(numbers_list)
+new_str = ""
+i = 0
+for n in numbers_list:
+    new_str = new_str + " " + str(n - i)
+    i = i+1
+print(new_str)
+I have 102 51 105 106 105 49 106 117 53 121 117 101 118 97 117 115 52 49 113 49 97 102 105 117 113 this equivalent in ascii text is f3iji1ju5yuevaus41q1afiuq
+Su flag09: f3iji1ju5yuevaus41q1afiuq
+Getflag: s5cAJpM8ev6XHw998pRWG728z

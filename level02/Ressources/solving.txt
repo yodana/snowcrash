@@ -1,0 +1,6 @@
+We see a file .pcap
+We use wireshark in kali for reading it
+In line 43 we can read password
+So we do follow tcp command => we have ft_wandr...NDRe.LOL
+We see that we don t know what are the caracters . so we hexdump this and we see the . = 7F and 7F in ascii is the delete caractere
+So ft_wandr...NDRe.LOL => ft_waNDReLOL

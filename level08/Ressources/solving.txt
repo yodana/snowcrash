@@ -1,0 +1,15 @@
+We can see a binary level08 and a file token without any access.
+We go decompile level08 and we see a line like this: if ( strstr(argv[1], "token") )
+  {
+    printf("You may not access '%s'\n", argv[1]);
+    exit(1);
+  }
+So ./level08 will print you may not access token
+For bypass this we need to do a symbolic link like:
+ln -s /home/user/level08/token /tmp/fi
+And now we can do:
+./level08 /tmp/fi
+/tmp/fi will be the link to token so the name it’s not token
+Output= quif5eloekouj29ke0vouxean
+Su flag08: quif5eloekouj29ke0vouxean
+Getflag: 25749xKZ8L7DkSCwJkT9dyv6f

